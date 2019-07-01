@@ -1,6 +1,5 @@
 (ns bowling-scoring.game-specs
   (:require [clojure.spec.alpha :as s]
-            [bowling-scoring.specs :as specs-common]
             [bowling-scoring.frame-specs :as fs]))
 
 (s/def ::incomplete-game
