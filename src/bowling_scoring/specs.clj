@@ -15,6 +15,5 @@
 (defn assert-valid-incomplete-game [data] (s/assert ::gs/incomplete-game data))
 (defn assert-valid-game [data] (s/assert ::gs/game data))
 
+(defn conform-complete-game [data] (validate ::gs/complete-game data))
 (defn check-asserts! [] (s/check-asserts true))
-
-(defn conform-game [data] (validate ::gs/game data))

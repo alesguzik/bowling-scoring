@@ -11,3 +11,6 @@
   (let [new-game-state (conj frames frame)]
     (specs/assert-valid-game new-game-state)
     (assoc card :frames new-game-state)))
+
+(defn complete-game? [{:keys [frames] :as card}]
+  (specs/conform-complete-game frames))
