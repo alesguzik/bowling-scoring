@@ -1,5 +1,9 @@
 (ns bowling-scoring.core)
 
+(defn valid-throw? [n]
+  (and (int? n)
+       (<= 0 n 10)))
+
 (defn make-score-card []
   {:accept :new-frame ; :new-frame :current-frame :done
    :frames []})
