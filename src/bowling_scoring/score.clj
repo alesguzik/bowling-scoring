@@ -2,8 +2,7 @@
   (:require [bowling-scoring.specs :as specs]))
 
 (defn score-last-frame [frame]
-  (let [[kind data] (specs/conform-last-frame frame)]
-    {:score (apply + (vals data)) :throws frame}))
+  {:score (apply + frame) :throws frame})
 
 (defn score-regular-frame [frame next-throws]
   (let [frame-sum (apply + frame)
