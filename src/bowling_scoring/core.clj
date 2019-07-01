@@ -7,6 +7,22 @@
 (defn add-throw [card throw-result]
   )
 
+(defn valid-regular-frame? [frame]
+  (and
+   (= 2 (count frame))
+   ))
+
+(defn valid-last-frame? [frame]
+  )
+
+(defn valid-frame? [frame-number frame]
+  (if (< frame-number 10)
+    (valid-regular-frame? frame)
+    (valid-last-frame? frame)))
+
+(defn add-frame [card frame]
+  )
+
 (comment
   (-> (make-score-card)
       (add-throw 1)
