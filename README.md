@@ -4,7 +4,12 @@ A Clojure library for working with bowling scorecards.
 
 ## Usage
 
-FIXME
+Public api consists of 4 functions in the `bowling-scoring.core` namespace:
+
+* `(make-score-card)` - returns an empty scorecard
+* `(add-frame score-card frame)` — returns updated scorecard with a new frame
+* `(complete-game? score-card)` — returns true if the game is complete and ready for scoring
+* `(calculate-score score-card)` — returns the score of the scorecard
 
 ## License
 
