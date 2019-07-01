@@ -2,10 +2,6 @@
   (:require [clojure.test :refer :all]
             [bowling-scoring.score :as score]))
 
-(def valid-game
-  [[10] [4 3] [8 1] [3 7] [1 4] [10] [4 3] [8 1] [3 7] [1 4]]
-  )
-
 (deftest score-test
   (testing "Scoring"
     (are [frames score] (= score (score/score-frames frames))
