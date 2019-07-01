@@ -1,8 +1,13 @@
-(ns bowling-scoring.core)
+(ns bowling-scoring.core
+  (:require [clojure.spec.alpha :as s]))
 
 (defn valid-throw? [n]
   (and (int? n)
        (<= 0 n 10)))
+
+(s/def ::open-frame
+  (s/and (s/cat :first-throw valid-throw? :second-throw valid-throw?)
+         #(< (+ (:first-throw %) (:second-throw %)) 10)))
 
 (defn make-score-card []
   {:accept :new-frame ; :new-frame :current-frame :done
