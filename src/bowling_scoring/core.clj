@@ -1,5 +1,7 @@
 (ns bowling-scoring.core
-  (:require [bowling-scoring.specs :as specs]))
+  (:require
+   [bowling-scoring.specs :as specs]
+   [bowling-scoring.score :as score]))
 
 (defn make-score-card []
   {:frames []})
@@ -14,3 +16,7 @@
 
 (defn complete-game? [{:keys [frames] :as card}]
   (specs/conform-complete-game frames))
+
+(defn calculate-score [{:keys [frames] :as card}]
+  {:pre [(complete-game? card)]}
+  (score/score-frames frames))
