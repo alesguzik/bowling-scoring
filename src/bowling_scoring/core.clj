@@ -1,7 +1,8 @@
 (ns bowling-scoring.core)
 
 (defn make-score-card []
-  {:frames []})
+  {:accept :new-frame ; :new-frame :current-frame :done
+   :frames []})
 
 (defn add-throw [card throw-result]
   )
