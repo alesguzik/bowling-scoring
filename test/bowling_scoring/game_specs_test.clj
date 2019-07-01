@@ -8,6 +8,7 @@
     (are [is-valid game] (= is-valid (s/valid? ::specs/incomplete-game game))
       true []
       false [[0]]
+      false [[90 0]]
       true [[0 0]]
       true [[1 4]]
       true [[10] [10]]
